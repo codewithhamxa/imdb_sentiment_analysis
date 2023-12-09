@@ -13,17 +13,11 @@ nltk.download('stopwords')
 # Load the trained model
 loaded_model = joblib.load('imdb_moviesreviews.joblib')
 
+# Load the vectorizer used during training
+vectorizer = joblib.load('your_vectorizer.joblib')
+
 # Assuming you have defined stop_words somewhere in your code
 stop_words = set(stopwords.words('english'))
-
-# Sample dataframe (replace this with your actual dataframe)
-data = {'review': ['This is a positive review.',
-                   'Negative reviews are not good.']}
-df = pd.DataFrame(data)
-
-# Load the vectorizer used during training
-# Replace with the actual filename
-vectorizer = joblib.load('your_vectorizer.joblib')
 
 # Streamlit app
 st.title('Movie Review Sentiment Prediction')
